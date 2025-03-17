@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import { gsap } from "gsap";
 import TennisBall from "../../components/TennisBall";
-
+import Border from "../../components/Border";
 const Intro = () => {
   const headlineRef = useRef(null);
   const subheadlineRef = useRef(null);
@@ -45,7 +45,7 @@ const Intro = () => {
 
         {/* Floating Tennis Balls */}
         <TennisBall position={[-2, 1, 0]} /> {/* Left side, mid-depth */}
-        <TennisBall position={[2, -1, 1]} /> {/* Right side, further back */}
+        <TennisBall position={[1.5, -1, 1]} /> {/* Right side, further back */}
         <TennisBall position={[1.5, 1.5, -2]} /> {/* Center, closer to the camera */}
       </Canvas>
 
@@ -59,37 +59,38 @@ const Intro = () => {
           enhance fan engagement, and empower officials with precise data for
           fairer and more informed decisions.
         </p>
+      {/* Button with Rotating Border Animation */}
         <div ref={buttonRef} className="d-flex gap-3">
-          <div
-            style={{
-              paddingLeft: 25,
-              paddingRight: 25,
-              paddingTop: 10,
-              paddingBottom: 10,
-              borderRadius: 2,
-              outline: "3px #501F8B solid",
-              outlineOffset: "-3px",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 10,
-              display: "inline-flex",
-            }}
-          >
+          <Border>
             <div
               style={{
-                textAlign: "center",
-                color: "white",
-                fontSize: 17,
-                fontFamily: "Poppins",
-                fontWeight: "400",
-                textTransform: "uppercase",
-                letterSpacing: 2.46,
-                wordWrap: "break-word",
+                paddingLeft: 25,
+                paddingRight: 25,
+                paddingTop: 10,
+                paddingBottom: 10,
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 10,
+                display: "inline-flex",
               }}
             >
-              GET IN TOUCH
+              <div
+                style={{
+                  textAlign: "center",
+                  color: "white",
+                  fontSize: 17,
+                  fontFamily: "Poppins",
+                  fontWeight: "400",
+                  textTransform: "uppercase",
+                  letterSpacing: 2.46,
+                  wordWrap: "break-word",
+                }}
+                className="btn p-0"
+              >
+                GET IN TOUCH
+              </div>
             </div>
-          </div>
+          </Border>
         </div>
       </div>
     </div>

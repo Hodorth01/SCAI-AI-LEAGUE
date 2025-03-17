@@ -11,9 +11,9 @@ const TennisBall = ({ position }) => {
   useEffect(() => {
     // Randomize the floating animation for each ball
     const floatingAnimation = gsap.to(ballRef.current.position, {
-      y: position[1] + Math.random() * 0.5, // Randomize vertical movement
-      x: position[0] + Math.random() * 0.5, // Randomize horizontal movement
-      z: position[2] + Math.random() * 0.5, // Randomize depth movement
+      y: position[1] + Math.random() * 0.2, // Randomize vertical movement
+      x: position[0] + Math.random() * 0.2, // Randomize horizontal movement
+      z: position[2] + Math.random() * 0.2, // Randomize depth movement
       duration: 3 + Math.random() * 2, // Randomize duration for organic feel
       yoyo: true,
       repeat: -1,
