@@ -10,6 +10,7 @@ const Intro = () => {
   const buttonRef = useRef(null);
 
   useEffect(() => {
+
     // GSAP animations for text and buttons
     gsap.from(headlineRef.current, {
       opacity: 1,
