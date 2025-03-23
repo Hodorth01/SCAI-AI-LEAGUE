@@ -7,41 +7,17 @@ import Border from "../../components/Border";
 import CubicText from "../../components/CubicText";
 
 const Intro = () => {
-  const headlineRef = useRef(null);
-  const subheadlineRef = useRef(null);
-  const buttonRef = useRef(null);
+
 
   useEffect(() => {
     // GSAP animations for text and buttons
-    gsap.from(headlineRef.current, {
-      opacity: 1, // Start invisible
-      y: 50,
-      duration: 1,
-      delay: 0.5,
-      ease: "power3.out",
-    });
-
-    gsap.from(subheadlineRef.current, {
-      opacity: 1, // Start invisible
-      y: 50,
-      duration: 1,
-      delay: 1,
-      ease: "power3.out",
-    });
-
-    gsap.from(buttonRef.current, {
-      opacity: 1, // Start invisible
-      y: 50,
-      duration: 1,
-      delay: 1.5,
-      ease: "power3.out",
-    });
+   
   }, []);
 
   return (
     <div className="hero-section">
       {/* 3D Canvas */}
-      <Canvas className="canvas mb-5" camera={{ position: [0, 0, 10], fov: 50 }}>
+      <Canvas className="canvas mb-5 pb-5" camera={{ position: [0, 0, 10], fov: 50 }}>
         <ambientLight intensity={1} />
         <pointLight position={[10, 10, 10]} />
 
@@ -59,16 +35,12 @@ const Intro = () => {
 
       {/* Hero Content */}
       <div className="hero-content mt-5 pt-5 w-100">
-      <div className = "mt-5 mb-5 mx-3 " style={{width: "100%", height: 0, outline: '1px #732ACB solid' , justifySelf:"center", maxWidth:"800px"}}></div>
-      
-        <p ref={subheadlineRef} className="lead">
+        <div className = "mt-5 mb-5 mx-3 " style={{width: "100%", height: 0, outline: '1px #732ACB solid' , justifySelf:"center", maxWidth:"800px"}}></div>
+        <p className="lead mt-3 pt-4">
           Unleash your A-Game!
           <br/>
           See it. SEED it. Smash it!
         </p>
-        
-
-
       </div>
     </div>
   );
