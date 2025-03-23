@@ -24,8 +24,9 @@ body {
 
 }
 
-/* HEADER */
+/*  */
 
+/* HEADER */
 .navbar{
   background-color: transparent;
   
@@ -59,8 +60,9 @@ body {
 
 /* Hero Content */
 .hero-content {
-  max-width: 800px;
   padding: 20px;
+  z-index: 2;
+  position: relative;
 }
 
 /* Buttons */
@@ -84,6 +86,25 @@ body {
   background-color: white;
   color: #007bff;
 }
+
+/* colored Text */
+.colordText{
+  background:linear-gradient(to top, #7028e4 0%, #e5b2ca 100%) !important;
+  background-clip: text !important;
+  color: transparent !important
+}
+
+/* intro texts */
+.introText{
+   text-align: center; 
+   color: white; 
+   font-size: 2.75rem !important; 
+   font-weight: 600; 
+   text-transform: uppercase; 
+   word-wrap: break-word;
+
+}
+
 /* border */
 .border-container {
   position: relative;
@@ -155,4 +176,12 @@ body {
 .border-container > * {
   position: relative;
   z-index: 2; /* Ensure content is above the borders */
+}
+
+/* cubic text rotate */
+.cubicText{
+  color: "white";
+  font-size: 1.7rem;
+  text-align: "center";
+  transition: opacity 0.5s ease;
 }

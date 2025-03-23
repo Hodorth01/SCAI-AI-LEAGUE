@@ -9,8 +9,9 @@ const TennisBall = ({ position }) => {
   const ballRef = useRef();
 
   useEffect(() => {
-    ballRef.current.position.set(0,.5,0)
-    
+    // Set initial position
+    ballRef.current.position.set(0, 1, 0);
+
     // Scale-up animation
     gsap.from(ballRef.current.scale, {
       x: 0,
@@ -29,6 +30,7 @@ const TennisBall = ({ position }) => {
       ease: "power3.out",
       delay: 0.5, // Delay to sync with the scale animation
     });
+
     // Randomize the floating animation for each ball
     const floatingAnimation = gsap.to(ballRef.current.position, {
       y: position[1] + Math.random() * 0.5, // Randomize vertical movement
@@ -39,11 +41,19 @@ const TennisBall = ({ position }) => {
       repeat: -1,
       ease: "sine.inOut",
       delay: 2, // Delay to start after the initial animations
+    });
 
+    // Rotate the ball continuously
+    const rotationAnimation = gsap.to(ballRef.current.rotation, {
+      y: Math.PI * 2, // Rotate 360 degrees (in radians)
+      duration: 15 + Math.random() * 5, // Randomize rotation speed
+      repeat: -1, // Infinite loop
+      ease: "linear", // Smooth rotation
     });
 
     return () => {
-      floatingAnimation.kill(); // Clean up animation on unmount
+      floatingAnimation.kill(); // Clean up floating animation
+      rotationAnimation.kill(); // Clean up rotation animation
     };
   }, [position]);
 
