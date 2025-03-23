@@ -39,7 +39,7 @@ const Intro = () => {
         <p className="lead mt-3 pt-4">
           Unleash your A-Game!
           <br/>
-          See it. SEED it. Smash it!
+          See it. SEED it. Smash it! 
         </p>
       </div>
     </div>
