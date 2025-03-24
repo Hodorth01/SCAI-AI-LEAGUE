@@ -1,21 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
-import { gsap } from "gsap";
 import TennisBall from "../../components/TennisBall";
-import Border from "../../components/Border";
 import CubicText from "../../components/CubicText";
 
 const Intro = () => {
 
 
-  useEffect(() => {
-    // GSAP animations for text and buttons
-   
-  }, []);
-
   return (
-    <div className="hero-section">
+    <div className="hero-section" style={{ position: "relative", maxHeight: "100vh" }}>
       {/* 3D Canvas */}
       <Canvas className="canvas mb-5 pb-5" camera={{ position: [0, 0, 10], fov: 50 }}>
         <ambientLight intensity={1} />
@@ -34,12 +27,12 @@ const Intro = () => {
       </Canvas>
 
       {/* Hero Content */}
-      <div className="hero-content mt-5 pt-5 w-100">
-        <div className = "mt-5 mb-5 mx-3 " style={{width: "100%", height: 0, outline: '1px #732ACB solid' , justifySelf:"center", maxWidth:"800px"}}></div>
+      <div className="hero-content mt-5 pt-5 w-100" style={{ position: "relative"  }}>
+        <div className="mt-5 mb-5 mx-3" style={{ width: "100%", height: 0, outline: "1px #732ACB solid", justifySelf: "center", maxWidth: "800px" }}></div>
         <p className="lead mt-3 pt-4">
           Unleash your A-Game!
-          <br/>
-          See it. SEED it. Smash it! 
+          <br />
+          See it. SEED it. Smash it!
         </p>
       </div>
     </div>
