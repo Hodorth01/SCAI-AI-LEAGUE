@@ -4,11 +4,9 @@ import { Stars } from "@react-three/drei";
 import TennisBall from "../../components/TennisBall";
 import CubicText from "../../components/CubicText";
 
-const Intro = () => {
-
-
+const Intro = ({ aboutRef }) => {
   return (
-    <div className="hero-section" style={{ position: "relative", maxHeight: "100vh" }}>
+    <div className="hero-section" style={{ position: "relative" }}>
       {/* 3D Canvas */}
       <Canvas className="canvas mb-5 pb-5" camera={{ position: [0, 0, 10], fov: 50 }}>
         <ambientLight intensity={1} />
@@ -20,19 +18,32 @@ const Intro = () => {
         <TennisBall position={[1.5, 1.5, -2]} /> {/* Center, closer to the camera */}
 
         {/* Cubic Text */}
-        <CubicText texts={["playing", "Analyzing", "mastering", "Analyzing"]} faceDuration={2} />
+        <CubicText
+          texts={["playing", "Analyzing", "mastering", "Analyzing"]}
+          faceDuration={2}
+          aboutRef={aboutRef} // Pass aboutRef to CubicText
+        />
 
         {/* Optional: Add Stars for a space-like background */}
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       </Canvas>
 
       {/* Hero Content */}
-      <div className="hero-content mt-5 pt-5 w-100" style={{ position: "relative"  }}>
-        <div className="mt-5 mb-5 mx-3" style={{ width: "100%", height: 0, outline: "1px #732ACB solid", justifySelf: "center", maxWidth: "800px" }}></div>
+      <div className="hero-content mt-5 pt-5 w-100" style={{ position: "relative" }}>
+        <div
+          className="mt-5 mb-5 mx-3"
+          style={{
+            width: "100%",
+            height: 0,
+            outline: "1px #732ACB solid",
+            justifySelf: "center",
+            maxWidth: "800px",
+          }}
+        ></div>
         <p className="lead mt-3 pt-4">
           Unleash your A-Game!
           <br />
-          See it. SEED it. Smash it!
+          See it. <strong>SEED</strong>  it. Smash it!
         </p>
       </div>
     </div>

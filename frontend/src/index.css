@@ -29,6 +29,7 @@ body {
 /* HEADER */
 .navbar{
   background-color: transparent;
+  z-index: 2;
   
 }
 .navbar a{
@@ -188,7 +189,5 @@ body {
 
 /* Ensure the About section is positioned correctly */
 .about-section {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+  background-color: var(--background-primary);
 }

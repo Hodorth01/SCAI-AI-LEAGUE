@@ -39,8 +39,8 @@ const About = forwardRef((props, ref) => {
           top: 0,
           left: 0,
           width: "100%",
-          height: "100vh", // Default height (will be updated dynamically)
-          background: "linear-gradient(180deg, #151515, #0a0a0a)",
+          height: "auto", // Default height (will be updated dynamically)
+          background: "#151515",
           zIndex: 1,
         }}
       ></div>
@@ -60,27 +60,26 @@ const About = forwardRef((props, ref) => {
 
       {/* Content Layer (Stays Steady) */}
       <div
+        className="px-0 mx-0 pt-2"
         ref={contentRef}
         style={{
           position: "relative",
           zIndex: 3, // Ensure the content is above the background and foreground layers
-          padding: "20px",
           color: "white",
           display: "flex",
           alignItems: "center", // Vertically center the content
         }}
       >
-        <div className="container h-100">
-          <div className="row h-100 align-items-center">
+        <div className="container-fluid px-0 mx-0">
+          <div className="row align-items-center px-0 mx-0 justify-content-between">
             {/* Image Column */}
-            <div className="col-sm-12 col-md-12 col-lg-5">
+            <div className="col-sm-12 col-md-12 col-lg-5 mx-0 px-0">
               <div
-                className="image-holder w-100"
+                className="image-holder mx-0 px-0 mb-5"
                 style={{
                   width: "100%",
                   height: "auto",
                   overflow: "hidden",
-                  borderRadius: "10px", // Optional: Add rounded corners
                 }}
               >
                 <img
@@ -96,9 +95,9 @@ const About = forwardRef((props, ref) => {
             </div>
 
             {/* Text Column */}
-            <div className="col-sm-12 col-md-12 col-lg-7">
+            <div className="col-sm-12 col-md-12 col-lg-6 pe-5">
               {/* Title */}
-              <div
+              <div className="colordText"
                 style={{
                   color: "#732ACB",
                   fontSize: "21px",
@@ -125,7 +124,7 @@ const About = forwardRef((props, ref) => {
                 >
                   We Bring{" "}
                 </span>
-                <span
+                <span className="colordText"
                   style={{
                     color: "#732ACB",
                     fontSize: "48px",
@@ -153,7 +152,7 @@ const About = forwardRef((props, ref) => {
               </div>
 
               {/* Subheading */}
-              <div
+              <div 
                 style={{
                   textAlign: "center",
                   color: "#732ACB",
@@ -182,36 +181,6 @@ const About = forwardRef((props, ref) => {
                 }}
               >
                 Imagine courts wired with smart vision, capturing every sprint, swing, and strategy. Our AI doesn’t just watch—it learns. It dissects your speed, decodes shot accuracy, and maps your game’s DNA with pixel-perfect heatmaps. No guesswork. No gear. Just raw data sharpened into actionable edge.
-              </div>
-
-              {/* Button */}
-              <div
-                style={{
-                  padding: "10px 25px",
-                  borderRadius: "2px",
-                  outline: "3px #732ACB solid",
-                  outlineOffset: "-3px",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: "10px",
-                  display: "inline-flex",
-                  marginTop: "20px", // Add margin for spacing
-                }}
-              >
-                <div
-                  style={{
-                    textAlign: "center",
-                    color: "white",
-                    fontSize: "17px",
-                    fontFamily: "Poppins",
-                    fontWeight: "400",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.12em",
-                    wordWrap: "break-word",
-                  }}
-                >
-                  READ MORE
-                </div>
               </div>
             </div>
           </div>
