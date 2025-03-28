@@ -1,54 +1,68 @@
-const Services = ()=>{
-    return(
-        <div style={{width: 589, height: 551, paddingBottom: 37, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 32, display: 'inline-flex'}}>
-            <div style={{width: 201, height: 35, color: '#732ACB', fontSize: 21, fontFamily: 'Poppins', fontWeight: '500', textTransform: 'uppercase', letterSpacing: 3.04, wordWrap: 'break-word'}}>our services</div>
-            <div style={{ display: "flex", alignItems: "center", lineHeight: "59.76px", wordWrap: "break-word" }}>
-            {/* First Part: "Unlock Your Game with" */}
-            <span
-                style={{
-                color: "white",
-                fontSize: "48px",
-                fontFamily: "Poppins",
-                fontWeight: "700",
-                textTransform: "capitalize",
-                }}
-            >
-                Unlock Your Game with{" "}
-            </span>
+import ServiceCard from "../../components/ServiceCard";
 
-            {/* Middle Part: "SEED" */}
-            <span
-                style={{
-                color: "#732ACB",
-                fontSize: "48px",
-                fontFamily: "Poppins",
-                fontWeight: "700",
-                textTransform: "capitalize",
-                }}
-            >
-                SEED
-            </span>
+const Services = () => {
+    return (
+        <div className="container py-5">
+            <div className="row">
+                {/* Left Column - Text Content */}
+                <div className="col-12 col-xl-6 mb-5 mb-xl-0">
+                    <div className="d-flex flex-column h-100">
+                      <div className="d-inline-block"> {/* Add this wrapper */}
+                        <div className="colordText text-label">
+                            our services
+                        </div>
+                      </div>
+                      <h1 className="text-white text-heading-xl mb-3">
+                          Unlock Your Game with <span className="colordText">SEED</span> Insights
+                      </h1>
+                      <p className="text-white text-body-lg mb-4">
+                          From grassroots to grand slams, SEED isn't just tracking tennis—we're rewriting how it's played, watched, and judged. Ready to play smarter?
+                      </p>
+                    </div>
+                </div>
 
-            {/* Last Part: "Insights" */}
-            <span
-                style={{
-                color: "white",
-                fontSize: "48px",
-                fontFamily: "Poppins",
-                fontWeight: "700",
-                textTransform: "capitalize",
-                }}
-            >
-                {" "}
-                Insights
-            </span>
-            </div>
-            <div style={{width: 589, height: 132, color: 'white', fontSize: 26, fontFamily: 'Poppins', fontWeight: '300', lineHeight: 43.29, letterSpacing: 1.04, wordWrap: 'break-word'}}>From grassroots to grand slams, SEED isn’t just tracking tennis—we’re rewriting how it’s played, watched, and judged. Ready to play smarter?"</div>
-            <div style={{width: 145, height: 47}} />
-            <div style={{width: 145, paddingLeft: 21, paddingRight: 21, paddingTop: 10, paddingBottom: 10, borderRadius: 2, outline: '3px #732ACB solid', outlineOffset: '-3px', justifyContent: 'center', alignItems: 'center', gap: 23, display: 'inline-flex'}}>
-                <div style={{textAlign: 'center', color: 'white', fontSize: 17, fontFamily: 'Poppins', fontWeight: '400', textTransform: 'uppercase', letterSpacing: 2.46, wordWrap: 'break-word'}}>VIEW ALL</div>
+                {/* Right Column - Cards */}
+                <div className="col-12 col-xl-6">
+                    <div className="row justify-content-start gx-4 gy-4">
+                        {/* First row of cards */}
+                        <div className="col-12 d-flex flex-wrap justify-content-xl-start justify-content-center">
+                            <div className="mx-2 mb-4">
+                                <ServiceCard
+                                  icon="./icons/heatmaps.png"
+                                  title="heatmaps" 
+                                  description="Visualize a player's positioning and activity on the field."
+                                />
+                            </div>
+                            <div className="mx-2 mb-4">
+                              <ServiceCard
+                                icon="./icons/speed.png"
+                                title="Speed" 
+                                description="Tracks a player's pace during matches."
+                              />                            
+                            </div>
+                        </div>
+                        {/* Second row of cards */}
+                        <div className="col-12 d-flex flex-wrap justify-content-xl-start justify-content-center">
+                            <div className="mx-2 mb-4">
+                              <ServiceCard
+                                  icon="./icons/ux.png"
+                                  title="insights" 
+                                  description="Evaluates past performances to identify trends and patterns."
+                              />                                
+                              </div>
+                            <div className="mx-2 mb-4">
+                              <ServiceCard
+                                  icon="./icons/shot.png"
+                                  title="shot placements" 
+                                  description="Visualize a player's shot accuracy on the field and learn new patterns."
+                              />                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    )
-}
-export default Services
+    );
+};
+
+export default Services;

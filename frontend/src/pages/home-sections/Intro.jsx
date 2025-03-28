@@ -6,7 +6,7 @@ import CubicText from "../../components/CubicText";
 
 const Intro = ({ aboutRef }) => {
   return (
-    <div className="hero-section" style={{ position: "relative" }}>
+    <div className="hero-section">
       {/* 3D Canvas */}
       <Canvas className="canvas mb-5 pb-5" camera={{ position: [0, 0, 10], fov: 50 }}>
         <ambientLight intensity={1} />
@@ -29,17 +29,8 @@ const Intro = ({ aboutRef }) => {
       </Canvas>
 
       {/* Hero Content */}
-      <div className="hero-content mt-5 pt-5 w-100" style={{ position: "relative" }}>
-        <div
-          className="mt-5 mb-5 mx-3"
-          style={{
-            width: "100%",
-            height: 0,
-            outline: "1px #732ACB solid",
-            justifySelf: "center",
-            maxWidth: "800px",
-          }}
-        ></div>
+      <div className="hero-content mt-5 pt-5 w-100">
+        <div className="mt-5 mb-5 mx-3 line"></div>
         <p className="lead mt-3 pt-4">
           Unleash your A-Game!
           <br />

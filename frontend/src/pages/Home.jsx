@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div>
       {/* Intro Section */}
-      <div
+      <section className="intro-section"
         ref={introRef}
         style={{
           position: "fixed",
@@ -29,15 +29,17 @@ const Home = () => {
         }}
       >
         <Intro aboutRef={aboutRef} /> {/* Pass aboutRef to Intro */}
-      </div>
+      </section>
 
       {/* About Section */}
-      <section className = "about-section" ref={aboutRef} style={{ position: "relative", marginTop: "100vh" }}>
+      <div className = "parallax-layer">
+        <section className="about-section" id="#about" ref={aboutRef} >
         <About />
-      </section>
-      {/* <section>
+        </section>
+        <section className="services-section">
         <Services/>
-      </section> */}
+        </section>
+      </div>
     </div>
   );
 };
