@@ -12,7 +12,7 @@ const Services = () => {
                             our services
                         </div>
                       </div>
-                      <h1 className="text-white text-heading-xl mb-3">
+                      <h1 className="text-white text-heading-lg mb-3">
                           Unlock Your Game with <span className="colordText">SEED</span> Insights
                       </h1>
                       <p className="text-white text-body-lg mb-4">

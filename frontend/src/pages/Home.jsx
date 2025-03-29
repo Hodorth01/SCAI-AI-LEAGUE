@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Intro from "./home-sections/Intro";
 import About from "./home-sections/About";
 import Services from "./home-sections/Services";
-
+import Steps from "./home-sections/Steps";
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,16 +28,19 @@ const Home = () => {
           zIndex: 0,
         }}
       >
-        <Intro aboutRef={aboutRef} /> {/* Pass aboutRef to Intro */}
+        <Intro aboutRef={aboutRef} />
       </section>
 
       {/* About Section */}
       <div className = "parallax-layer">
-        <section className="about-section" id="#about" ref={aboutRef} >
-        <About />
+        <section className="about-section pt-3" id="about" ref={aboutRef} >
+          <About />
         </section>
-        <section className="services-section">
-        <Services/>
+        <section className="services-section" id="services">
+          <Services/>
+        </section>
+        <section className="Steps-section" >
+          <Steps/>
         </section>
       </div>
     </div>

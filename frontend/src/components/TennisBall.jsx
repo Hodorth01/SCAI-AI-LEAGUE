@@ -60,7 +60,7 @@ const TennisBall = ({ position }) => {
   return (
     <mesh ref={ballRef} position={position}>
       <sphereGeometry args={[0.5, 32, 32]} /> {/* Smaller size for better spacing */}
-      <meshStandardMaterial map={textureLoader.load("/textures/AdobeStock_145356555.jpeg")} />
+      <meshStandardMaterial map={textureLoader.load("/textures/texture.png")} />
     </mesh>
   );
 };

@@ -323,28 +323,30 @@ body::-webkit-scrollbar {
 /* ------------------------------------------------------------------- 
  * ## SERVICES SECTION
  * ------------------------------------------------------------------- */
- /* Service Card Styles */
-.service-card {
-  width: 18.75rem; /* 300px */
-  aspect-ratio: 1;
+ .service-card {
+  width: 300px;
   background: linear-gradient(30deg, #732ACB 0%, rgba(21, 21, 21, 0.52) 60%);
-  padding: 0.625rem; /* 10px */
-  border-radius: 0.5rem; /* 8px */
+  padding: 20px;
+  border-radius: 8px;
   height: 100%;
 }
 
 .service-card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   height: 100%;
 }
 
+.service-card-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px; /* Consistent space below icon */
+}
+
 .service-card-icon {
-  width: 9.375rem; /* 150px */
-  height: 7.5rem; /* 120px */
-  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .service-card-text {
@@ -353,17 +355,30 @@ body::-webkit-scrollbar {
 
 .service-card-title {
   color: #732ACB;
-  font-size: var(--font-2xl);
+  font-size: 28px;
   font-family: 'Poppins';
   font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 0.625rem; /* 10px */
+  line-height: 1.2;
+  margin-top: 0;
 }
 
 .service-card-description {
   color: white;
-  font-size: var(--font-lg);
+  font-size: 20px;
   font-family: 'Poppins';
   font-weight: 300;
   line-height: 1.5;
+  margin-top: 8px;
 }
+
+/* ------------------------------------------------------------------- 
+ * ## STEPS SECTION
+ * ------------------------------------------------------------------- */
+
+ .steps-container {
+  position: relative;
+  background: linear-gradient(15deg, #732ACB 0%, rgba(21, 21, 21, 0.52) 50%);
+}
+
+
