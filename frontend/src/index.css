@@ -484,3 +484,95 @@ body::-webkit-scrollbar {
   font-size: 2.5rem;
   flex-shrink: 0;       /* Prevents icon from shrinking on small screens */
 }
+/* ------------------------------------------------------------------- 
+ * ## FOOTER SECTION
+ * ------------------------------------------------------------------- */
+ /* Footer.css */
+
+/* Main footer styles */
+.footer {
+  background-color:var(--background-primary);
+  color: white;
+  padding: 3rem 0;
+  position: relative;
+  min-height: 521px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Logo section */
+.footer-logo {
+  color: #732ACB;
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  color: white;
+  letter-spacing: 2.66px;
+}
+
+/* Divider line */
+.footer-divider {
+  width: 101px;
+  height: 2px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+/* Navigation links */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.footer-nav-link {
+  color: #732ACB;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.footer-nav-link:hover {
+  opacity: 0.8;
+}
+
+/* Description text */
+.footer-description {
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: 0.84px;
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-social-icon {
+  color: #732ACB;
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.footer-social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Copyright */
+.footer-copyright {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
