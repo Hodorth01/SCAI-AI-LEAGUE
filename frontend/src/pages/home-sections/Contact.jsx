@@ -82,7 +82,7 @@ const Contact = () => {
               textTransform: 'uppercase', 
               wordWrap: 'break-word'
             }}>
-              GET IN
+              GET IN {" "}
             </span>
             <span className='colordText' style={{
               color: '#732ACB', 
@@ -92,7 +92,7 @@ const Contact = () => {
               textTransform: 'uppercase', 
               wordWrap: 'break-word'
             }}>
-              TOUCH
+              TOUCH 
             </span>
           </div>
           <div className="mt-4 icons-holder text-white">
