@@ -46,7 +46,7 @@ const About = forwardRef((props, ref) => {
 
             {/* Text Column */}
             <div className="col-sm-12 col-md-12 col-lg-6 pe-5">
-              <div className="colordText text-label">
+              <div className="colordText text-label align-self-start">
                 ABOUT US
               </div>
 

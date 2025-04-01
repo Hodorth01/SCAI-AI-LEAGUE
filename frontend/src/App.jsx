@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // pages & components
 import Header from './layout/Header';
 import Home from './pages/Home';
+import Login from './auth/login';
+import Signup from './auth/Signup';
 import Footer from './layout/Footer';
 function App() {
     return (
@@ -13,6 +15,14 @@ function App() {
                         <Route
                             path="/"
                             element={ <Home />}
+                        />
+                        <Route
+                            path="signup"
+                            element={ <Signup />}
+                        />
+                        <Route
+                            path="login"
+                            element={ <Login />}
                         />
                     </Routes>
                 </div>

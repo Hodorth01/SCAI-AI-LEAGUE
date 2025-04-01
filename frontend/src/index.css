@@ -4,7 +4,7 @@
 /* layout */
 :root {
   /* COLORS */
-  --c-primary: #f36100;
+  --c-primary: #732ACB;
   --c-secondary:#ffffff;
   --c-error: #e7195a;
   --background-primary:#151515;
@@ -483,7 +483,6 @@ body {
 /* ------------------------------------------------------------------- 
  * ## FOOTER SECTION
  * ------------------------------------------------------------------- */
- /* Footer.css */
 
 /* Main footer styles */
 .footer {
@@ -573,3 +572,94 @@ body {
   text-transform: capitalize;
 }
 
+
+/* ------------------------------------------------------------------- 
+ * ## AUTH 
+ * ------------------------------------------------------------------- */
+
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--background-secondary);
+  border-radius: 4px;
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1), 
+              0px 2px 4px  rgba(0, 0, 0, 0.7);  border-radius: 10px;
+}
+.url {
+  color: var(--c-primary) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.url:hover {
+  color: #732ACB !important; 
+  text-decoration: underline; 
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border:1px solid #363636;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: var(--background-secondary);
+  color: white;
+}
+.input-wrapper {
+  display: flex;     
+  align-items: center;    
+  gap: 0.5rem;             
+}
+.input-details {
+  background: var(--background-secondary);
+  font-size: inherit;      
+  font-family: inherit;  
+  width: 100px;  
+  padding: 0;          
+  padding-left: 5px;    
+  cursor: text;           
+  border: 1px solid var(--border-c);
+  color: white !important;
+
+
+}
+
+.input-details:disabled {
+  cursor: text;    
+  background: var(--background-secondary);
+  border: 0;
+  color: white !important;
+}
+.button {
+  background-color: #732ACB; 
+  color: #ffffff;
+  border: 1px solid #732ACB; 
+  border-radius: 4px; 
+  padding: 10px;
+  font-weight: 500; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  background-color: #732ACB;
+  box-shadow: 0 0 15px rgba(142, 43, 255, 0.8);
+}
+
+.button:active {
+  background-color: #732ACB;
+  box-shadow: 0 0 15px rgba(142, 43, 255, 0.8);
+}
+div.error {
+  padding: 10px;
+  background: var(--c-error);;
+  border: 1px solid var(--error);
+  color: white;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--c-error);
+}
