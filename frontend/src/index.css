@@ -35,12 +35,13 @@
 
 html {
   height: 100%;
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-  scroll-behavior: smooth;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE/Edge */
 
 }
-
+html::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, Opera */
+}
 body {
   min-height: 100%;
   font-family: "Muli", sans-serif;
@@ -48,17 +49,12 @@ body {
   font-smoothing: antialiased;
   background: var(--background-primary)!important;
   position: relative;
-  /* Set overflow to auto instead of visible */
-  overflow-y: auto;
   overflow-x: hidden;
+  overflow-y: scroll; 
+  -webkit-overflow-scrolling: touch; 
 }
 
-/* Optional: Hide scrollbar while keeping functionality */
-body::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  background: transparent;
-}
+
 /* HEADER */
 .navbar{
   background-color: transparent;
@@ -576,3 +572,4 @@ body::-webkit-scrollbar {
   font-weight: 300;
   text-transform: capitalize;
 }
+
