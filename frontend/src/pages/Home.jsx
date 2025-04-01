@@ -5,6 +5,7 @@ import Intro from "./home-sections/Intro";
 import About from "./home-sections/About";
 import Services from "./home-sections/Services";
 import Steps from "./home-sections/Steps";
+import Contact from "./home-sections/Contact";
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,6 +42,9 @@ const Home = () => {
         </section>
         <section className="Steps-section" >
           <Steps/>
+        </section>
+        <section className="contact-section" >
+          <Contact/>
         </section>
       </div>
     </div>

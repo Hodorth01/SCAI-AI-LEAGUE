@@ -381,4 +381,106 @@ body::-webkit-scrollbar {
   background: linear-gradient(15deg, #732ACB 0%, rgba(21, 21, 21, 0.52) 50%);
 }
 
+/* ------------------------------------------------------------------- 
+ * ## CONTACT SECTION
+ * ------------------------------------------------------------------- */
 
+.contact-form{
+  background: linear-gradient(30deg, #732ACB 0%, rgba(21, 21, 21, 0.52) 60%);
+  border-radius: 30px;
+
+}
+.contact-form input, .contact-form textarea{
+  border: rgba(255, 255, 255, 0.63) 1px solid;
+}
+
+  /* BORDER */
+ .border-container {
+  position: relative;
+  padding: 10px; 
+  background: var(--background-primary)!important;
+  color: white;
+  overflow: hidden; /* Ensure the border doesn't overflow */
+  display: inline-block; /* Ensure it fits the content */
+}
+
+.border-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    #8a2be2,
+    #7700ff,
+    transparent
+  ); /* Gradient colors */
+  animation: rotateBorder 4s linear infinite; /* Continuous rotation */
+  z-index: 0; /* Ensure it's behind the content */
+  transition: all 0.5s ease; /* Smooth transition for hover effect */
+}
+
+.border-container::after {
+  content: "";
+  position: absolute;
+  top: 3px; /* Adjust to match border thickness */
+  left: 3px; /* Adjust to match border thickness */
+  right: 3px; /* Adjust to match border thickness */
+  bottom: 3px; /* Adjust to match border thickness */
+  background: linear-gradient(30deg, #732ACB 0%, rgba(21, 21, 21, 0.52) 60%);
+  z-index: 1; /* Ensure it's above the gradient */
+  transition: all 0.5s ease; /* Smooth transition for hover effect */
+}
+
+/* Keyframes for rotating the border */
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hover effect */
+.border-container:hover::before {
+  animation-play-state: paused; /* Pause the animation on hover */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #8a2be2, #7700ff); /* Static gradient border */
+  opacity: 0;
+}
+
+/* Glowing effect for static border */
+.border-container:hover {
+  box-shadow: 0 0 10px #8a2be2, 0 0 20px #7700ff; /* Glowing effect */
+}
+
+/* Inner content styling */
+.border-container > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the borders */
+}
+ 
+/* ICON */
+.icons-holder {
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.icons-holder div {
+  display: flex;        /* Makes icon + text align in a row */
+  align-items: center;  /* Vertically centers them */
+  margin-bottom: 1rem;  /* Keeps spacing between items */
+}
+
+.icon {
+  color: #732acb;
+  font-size: 2.5rem;
+  flex-shrink: 0;       /* Prevents icon from shrinking on small screens */
+}

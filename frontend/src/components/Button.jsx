@@ -1,7 +1,7 @@
  const Button = ()=>{
     return(
                 
-                <div ref={buttonRef} className="d-flex gap-3 mt-3" style={{maxWidth:"800px", justifySelf:"center"}}>
+                <div className="d-flex gap-3 mt-3" style={{maxWidth:"800px", justifySelf:"center"}}>
                 <Border>
                   <div
                     style={{
