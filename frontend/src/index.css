@@ -35,13 +35,13 @@
 
 html {
   height: 100%;
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For IE/Edge */
 
 }
+
 html::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, Opera */
+  width: 0 !important; 
 }
+
 body {
   min-height: 100%;
   font-family: "Muli", sans-serif;
@@ -49,9 +49,8 @@ body {
   font-smoothing: antialiased;
   background: var(--background-primary)!important;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: scroll; 
-  -webkit-overflow-scrolling: touch; 
+  overflow-y: auto; 
+  -webkit-overflow-scrolling: touch;
 }
 
 
