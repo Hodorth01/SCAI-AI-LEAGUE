@@ -4,9 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import StepCard from "../../components/StepCard";
 
 // Register ScrollTrigger plugin
-if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
-}
 
 const Steps = () => {
   const sectionRef = useRef(null);
