@@ -1,6 +1,3 @@
-import React, { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 

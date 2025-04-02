@@ -13,8 +13,8 @@ const Header = () => {
                 </button>
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                 <div className="navbar-nav" >
-                    <a className="nav-link px-3" aria-current="page" href="#about">About Us</a>
-                    <a className="nav-link px-3" aria-current="page" href="#services">Services</a>
+                    <a className="nav-link px-3" aria-current="page" href="/#about">About Us</a>
+                    <a className="nav-link px-3" aria-current="page" href="/#services">Services</a>
                     <a className="nav-link px-3" href="#">Your History</a>
                     <a className="nav-link px-3" href="/login">login</a>
                     <a className="nav-link px-3" href="#">Contact Us</a>

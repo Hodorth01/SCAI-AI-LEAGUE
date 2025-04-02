@@ -13,21 +13,22 @@ const Login = () => {
         <div className="p-2">
         <form className="login text-white " onSubmit={handleSubmit}>
             <h3 className="mb-4">Log In</h3>
-
-            <label>username:</label>
+            <label className="form-label d-block ">Username:</label>
             <input
+                className="d-block "
                 type="text"
                 onChange={(e) => setUserName(e.target.value)}
                 value={userName}
             />
-            <label>Password:</label>
+            <label className="form-label d-block">Password:</label>
             <input
+                className="d-block"
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
             />
 
-            <button disabled={isLoading} className="button mt-3 me-1">log in</button>
+            <button disabled={isLoading} className="button mt-3 me-1">Log in</button>
             <a href="/signup" className="url"> you don't have an account?</a>
             {error && <div className="error">{error}</div>}
         </form>

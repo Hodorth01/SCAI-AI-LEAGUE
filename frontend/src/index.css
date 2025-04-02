@@ -141,6 +141,19 @@ body {
   color: white;
 }
 
+/*--------------------------------------------------------------
+  # SPINNER
+--------------------------------------------------------------*/
+
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  color: var(--c-primary);
+}
+
 /* ------------------------------------------------------------------- 
  * ## HOME
  * ------------------------------------------------------------------- */
@@ -614,7 +627,6 @@ input {
 .input-details {
   background: var(--background-secondary);
   font-size: inherit;      
-  font-family: inherit;  
   width: 100px;  
   padding: 0;          
   padding-left: 5px;    
