@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import StepCard from "../../components/StepCard";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const Steps = () => {
@@ -11,37 +10,34 @@ const Steps = () => {
   const headingRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // Store card refs
+  // Store card refs with initial state
   const addToCardRefs = (el) => {
     if (el && !cardRefs.current.includes(el)) {
       cardRefs.current.push(el);
+      gsap.set(el, { opacity: 0, y: 50 });
     }
   };
 
   useEffect(() => {
-    // Set initial state (hidden and positioned)
-    gsap.set([headingRef.current, ...cardRefs.current], {
-      opacity: 0,
-      y: 50,
-      // Ensure elements are visible to ScrollTrigger
-      visibility: "visible"
-    });
+    const createAnimations = () => {
+      const isMobile = window.innerWidth < 768;
+      
+      // Kill any existing triggers
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      
+      // Set initial state for heading if not already set
+      gsap.set(headingRef.current, { opacity: 0, y: 50 });
 
-    // Create a media query condition
-    const mm = gsap.matchMedia();
-    
-    mm.add("(min-width: 768px)", () => {
-      // Desktop animations
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
+          start: isMobile ? "top 90%" : "top 80%",
           toggleActions: "play none none none",
-          markers: false
+          markers: false // Set to true to debug trigger position
         }
       });
 
+      // Heading animation
       tl.to(headingRef.current, {
         opacity: 1,
         y: 0,
@@ -49,45 +45,29 @@ const Steps = () => {
         ease: "power2.out"
       });
 
-      tl.to(cardRefs.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "back.out(1.2)"
-      }, "-=0.5");
-    });
-
-    mm.add("(max-width: 767px)", () => {
-      // Mobile animations - more aggressive trigger point
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 90%", // Higher percentage for mobile
-          end: "bottom 10%",
-          toggleActions: "play none none none",
-          markers: false
-        }
+      // Cards animation - sequential with small stagger
+      cardRefs.current.forEach((card, index) => {
+        tl.to(card, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "back.out(1.2)"
+        }, `+=${index * 0.1}`); // Each card starts 0.1s after previous
       });
+    };
 
-      tl.to(headingRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out"
-      });
+    // Initialize animations
+    createAnimations();
 
-      tl.to(cardRefs.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1, // Smaller stagger on mobile
-        ease: "back.out(1.2)"
-      }, "-=0.5");
-    });
+    // Handle resize
+    const handleResize = () => {
+      createAnimations();
+    };
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      mm.revert(); // cleanup
+      window.removeEventListener("resize", handleResize);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
