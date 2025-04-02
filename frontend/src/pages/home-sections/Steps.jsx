@@ -1,43 +1,43 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import StepCard from "../../components/StepCard";
-
-// Register ScrollTrigger plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
+import StepCard from "./../../components/StepCard"
 const Steps = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // Store card refs
+  // Improved ref collection with mobile-ready initial state
   const addToCardRefs = (el) => {
     if (el && !cardRefs.current.includes(el)) {
       cardRefs.current.push(el);
+      gsap.set(el, { 
+        opacity: 0, 
+        y: 30,
+        visibility: "visible" // Ensures elements are render-visible
+      });
     }
   };
 
   useEffect(() => {
-    // Set initial state (hidden)
-    gsap.set([headingRef.current, ...cardRefs.current], {
-      opacity: 0,
-      y: 50
+    // Mobile-responsive setup
+    const isMobile = window.innerWidth < 768;
+    
+    gsap.set(headingRef.current, { 
+      opacity: 0, 
+      y: 30 
     });
 
-    // Animation timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 80%",
+        start: isMobile ? "top 90%" : "top 80%", // Higher trigger on mobile
         toggleActions: "play none none none",
-        markers: false // Set to true to debug trigger position
+        markers: false, // Enable to debug
+        invalidateOnRefresh: true // Important for mobile rotation
       }
     });
 
-    // Heading animation
     tl.to(headingRef.current, {
       opacity: 1,
       y: 0,
@@ -45,17 +45,23 @@ const Steps = () => {
       ease: "power2.out"
     });
 
-    // Cards animation (staggered)
-    tl.to(cardRefs.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: "back.out(1.2)"
-    }, "-=0.5");
+    // More reliable mobile animation - sequential instead of stagger
+    cardRefs.current.forEach((card, i) => {
+      tl.to(card, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "back.out(1.2)"
+      }, `+=${i * 0.1}`); // 0.1s between each card
+    });
+
+    // Handle resize
+    const onResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", onResize);
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      window.removeEventListener("resize", onResize);
+      ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
 
