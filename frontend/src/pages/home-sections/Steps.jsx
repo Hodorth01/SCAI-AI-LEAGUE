@@ -4,7 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import StepCard from "../../components/StepCard";
 
 // Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Steps = () => {
   const sectionRef = useRef(null);
@@ -19,75 +21,40 @@ const Steps = () => {
   };
 
   useEffect(() => {
-    // Set initial state (hidden and positioned)
+    // Set initial state (hidden)
     gsap.set([headingRef.current, ...cardRefs.current], {
       opacity: 0,
-      y: 50,
-      // Ensure elements are visible to ScrollTrigger
-      visibility: "visible"
+      y: 50
     });
 
-    // Create a media query condition
-    const mm = gsap.matchMedia();
-    
-    mm.add("(min-width: 768px)", () => {
-      // Desktop animations
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none none",
-          markers: false
-        }
-      });
-
-      tl.to(headingRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out"
-      });
-
-      tl.to(cardRefs.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "back.out(1.2)"
-      }, "-=0.5");
+    // Animation timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+        markers: false // Set to true to debug trigger position
+      }
     });
 
-    mm.add("(max-width: 767px)", () => {
-      // Mobile animations - more aggressive trigger point
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 90%", // Higher percentage for mobile
-          end: "bottom 10%",
-          toggleActions: "play none none none",
-          markers: false
-        }
-      });
-
-      tl.to(headingRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out"
-      });
-
-      tl.to(cardRefs.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1, // Smaller stagger on mobile
-        ease: "back.out(1.2)"
-      }, "-=0.5");
+    // Heading animation
+    tl.to(headingRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out"
     });
+
+    // Cards animation (staggered)
+    tl.to(cardRefs.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.2,
+      ease: "back.out(1.2)"
+    }, "-=0.5");
 
     return () => {
-      mm.revert(); // cleanup
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
