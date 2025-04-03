@@ -124,19 +124,23 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
 
         {/* Face 1 (Front) */}
         <Html position={[0, 0, 1.01]} transform>
+        <div class="d-flex justify-content-center">
           <div
-            className="cubicText colordText introText"
-            style={{
-              opacity: visibleFace === 0 ? 1 : 0, // Show only if Face 1 is visible
-              zIndex: 1000, // Ensure the text is always on top
-            }}
-          >
-            {texts[0]}
+              className="cubicText colordText introText"
+              style={{
+                opacity: visibleFace === 0 ? 1 : 0, // Show only if Face 1 is visible
+                zIndex: 1000, // Ensure the text is always on top
+              }}
+            >
+              {texts[0]}
+            </div>
           </div>
+
         </Html>
 
         {/* Face 2 (Top) */}
         <Html position={[0, 1.01, 0]} transform rotation={[Math.PI / 2, 0, 0]}>
+        <div class="d-flex justify-content-center">
           <div
             className="cubicText colordText introText"
             style={{
@@ -147,10 +151,13 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
           >
             {texts[1]}
           </div>
+        </div>
         </Html>
 
         {/* Face 3 (Back) */}
         <Html position={[0, 0, -1.01]} transform rotation={[0, 0, Math.PI]}>
+
+        <div class="d-flex justify-content-center">
           <div
             className="cubicText colordText introText"
             style={{
@@ -161,19 +168,22 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
           >
             {texts[2]}
           </div>
+          </div>
         </Html>
 
         {/* Face 4 (Bottom) */}
         <Html position={[0, -1.01, 0]} transform rotation={[-Math.PI / 2, 0, 0]}>
+        <div class="d-flex justify-content-center">
           <div
             className="cubicText colordText introText"
             style={{
-              opacity: visibleFace === 3 ? 1 : 0, // Show only if Face 4 is visible
-              transform: "rotateX(180deg)",
+              opacity: visibleFace === 2 ? 1 : 0, // Show only if Face 3 is visible
+              transform: "rotateY(180deg)",
               zIndex: 1000, // Ensure the text is always on top
             }}
           >
             {texts[3]}
+          </div>
           </div>
         </Html>
       </mesh>
