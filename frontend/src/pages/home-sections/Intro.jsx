@@ -19,7 +19,7 @@ const Intro = ({ aboutRef }) => {
 
         {/* Cubic Text */}
         <CubicText
-          texts={["playing", "Analyze", "mastering", "Analyze"]}
+          texts={["playing", "mastering", "mastering", "Analyze"]}
           faceDuration={2}
           aboutRef={aboutRef} // Pass aboutRef to CubicText
         />
@@ -30,8 +30,8 @@ const Intro = ({ aboutRef }) => {
 
       {/* Hero Content */}
       <div className="hero-content mt-5 pt-5 w-100">
-        <div class="mt-5 mb-5 mx-3 d-flex justify-content-center">
-          <div class="line"></div>
+        <div className="mt-5 mb-5 mx-3 d-flex justify-content-center">
+          <div className="line"></div>
         </div>        
         <p className="lead mt-3 pt-4">
           Unleash your A-Game!
