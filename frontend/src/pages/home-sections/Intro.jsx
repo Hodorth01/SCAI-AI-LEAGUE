@@ -19,7 +19,7 @@ const Intro = ({ aboutRef }) => {
 
         {/* Cubic Text */}
         <CubicText
-          texts={["playing", "Analyzing", "mastering", "Analyzing"]}
+          texts={["playing", "Analyze", "mastering", "Analyze"]}
           faceDuration={2}
           aboutRef={aboutRef} // Pass aboutRef to CubicText
         />

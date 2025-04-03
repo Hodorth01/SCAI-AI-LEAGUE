@@ -92,10 +92,10 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
   }, [faceDuration, aboutRef]);
 
   return (
-    <group className = "d-flex justify-content-center">
+    <group>
       {/* Fixed Text: "A new way of" (First Line) */}
       <Html
-        position={[0, 1.7, 0]}
+        position={[0, 1.8, 0]}
         style={{
           width: "100%",
           display: "flex",
@@ -119,70 +119,64 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
 
       {/* Cubic Text (Second Line) */}
       <mesh ref={cubeRef} position={[0, 1, 0]} scale={[0.6, 0.6, 0.6]}>
-        <boxGeometry args={[0.5, 0.5, 0.5]} /> {/* Cube size */}
+        <boxGeometry args={[1, 1, 1]} /> {/* Cube size */}
         <meshStandardMaterial transparent opacity={0} /> {/* Make the cube transparent */}
 
         {/* Face 1 (Front) */}
         <Html position={[0, 0, 1.01]} transform>
-        <div class="d-flex justify-content-center">
           <div
-              className="cubicText colordText introText"
+              className="cubicText colordText introText "
               style={{
                 opacity: visibleFace === 0 ? 1 : 0, // Show only if Face 1 is visible
                 zIndex: 1000, // Ensure the text is always on top
+
               }}
             >
               {texts[0]}
             </div>
-          </div>
-
         </Html>
 
         {/* Face 2 (Top) */}
         <Html position={[0, 1.01, 0]} transform rotation={[Math.PI / 2, 0, 0]}>
-        <div class="d-flex justify-content-center">
           <div
-            className="cubicText colordText introText"
-            style={{
+              className="cubicText colordText introText "
+              style={{
               opacity: visibleFace === 1 ? 1 : 0, // Show only if Face 2 is visible
               transform: "rotateX(180deg)",
               zIndex: 1000, // Ensure the text is always on top
+
             }}
           >
             {texts[1]}
-          </div>
           </div>
         </Html>
 
         {/* Face 3 (Back) */}
         <Html position={[0, 0, -1.01]} transform rotation={[0, 0, Math.PI]}>
-          <div class="d-flex justify-content-center">
-            <div
-              className="cubicText colordText introText"
+          <div
+              className="cubicText colordText introText "
               style={{
-                opacity: visibleFace === 2 ? 1 : 0, // Show only if Face 3 is visible
-                transform: "rotateY(180deg)",
-                zIndex: 1000, // Ensure the text is always on top
-              }}
-            >
-              {texts[2]}
-            </div>
+              opacity: visibleFace === 2 ? 1 : 0, // Show only if Face 3 is visible
+              transform: "rotateY(180deg)",
+              zIndex: 1000, // Ensure the text is always on top
+
+            }}
+          >
+            {texts[2]}
           </div>
         </Html>
 
         {/* Face 4 (Bottom) */}
         <Html position={[0, -1.01, 0]} transform rotation={[-Math.PI / 2, 0, 0]}>
-        <div class="d-flex justify-content-center">
           <div
-            className="cubicText colordText introText"
-            style={{
+              className="cubicText colordText introText"
+              style={{
               opacity: visibleFace === 3 ? 1 : 0, // Show only if Face 4 is visible
               transform: "rotateX(180deg)",
               zIndex: 1000, // Ensure the text is always on top
             }}
           >
             {texts[3]}
-          </div>
           </div>
         </Html>
       </mesh>
@@ -197,6 +191,7 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
             textAlign: "center",
             transform: "translate(-50%, -50%)",
             zIndex: 1000, // Ensure the text is always on top
+            
           }}
         >
           SPORTS
