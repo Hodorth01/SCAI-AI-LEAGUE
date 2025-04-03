@@ -19,12 +19,11 @@ const Intro = ({ aboutRef }) => {
 
         {/* Cubic Text */}
         <CubicText
-          texts={["playing", "mastering", " Analyzing", "mastering"]}
+          texts={["playing", "mastering", "analyzing", "mastering"]}
           faceDuration={2}
           aboutRef={aboutRef} // Pass aboutRef to CubicText
         />
 
-        {/* Optional: Add Stars for a space-like background */}
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       </Canvas>
 
