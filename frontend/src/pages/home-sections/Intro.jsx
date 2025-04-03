@@ -30,11 +30,13 @@ const Intro = ({ aboutRef }) => {
 
       {/* Hero Content */}
       <div className="hero-content mt-5 pt-5 w-100">
-        <div className="mt-5 mb-5 mx-3 line"></div>
+        <div class="mt-5 mb-5 mx-3 d-flex justify-content-center">
+          <div class="line"></div>
+        </div>        
         <p className="lead mt-3 pt-4">
           Unleash your A-Game!
           <br />
-          See it. <strong>SEED</strong>  it. Smash it!
+          See it. <strong className="colordText">SEED</strong>  it. Smash it!
         </p>
       </div>
     </div>

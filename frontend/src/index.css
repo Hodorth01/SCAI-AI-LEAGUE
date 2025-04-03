@@ -63,7 +63,12 @@ body {
 .navbar a{
   color:white
 }
-
+.navbar a:hover{
+  color:rgb(219, 219, 219)
+}
+.navbar a:focus{
+  color:rgb(219, 219, 219)
+}
 /* ------------------------------------------------------------------- 
  * ## FONTS
  * ------------------------------------------------------------------- */
@@ -199,7 +204,6 @@ body {
   width: 100%;
   height: 0;
   outline: 1px solid #732ACB;
-  justify-self: center;
   max-width: 800px;
 }
 /* Buttons */

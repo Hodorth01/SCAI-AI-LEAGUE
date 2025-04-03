@@ -63,7 +63,6 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
         start: "top bottom", // Start when the top of the About section hits the bottom of the viewport
         end: "bottom center", // End when the About section leaves the center
         onEnter: () => {
-          console.log("About section entered viewport. Freezing animation and resetting to Face 1.");
 
           // Pause the timeline
           timeline.pause();
@@ -79,7 +78,6 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
           });
         },
         onLeaveBack: () => {
-          console.log("About section left viewport. Restarting animation.");
 
           // Restart the timeline from the beginning
           timeline.restart();
@@ -104,7 +102,6 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
           justifyContent: "center",
           alignItems: "center",
           transform: "translate(-50%, -50%)", // Center the text
-          zIndex: 1000, // Ensure the text is always on top
         }}
       >
         <p
