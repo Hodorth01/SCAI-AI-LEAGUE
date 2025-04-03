@@ -204,7 +204,7 @@ body {
   width: 100%;
   height: 0;
   outline: 1px solid #732ACB;
-  max-width: 800px;
+    max-width: 800px;
 }
 /* Buttons */
 .btn {
