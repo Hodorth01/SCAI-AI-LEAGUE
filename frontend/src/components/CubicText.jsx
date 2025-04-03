@@ -119,7 +119,7 @@ function CubicText({ texts, faceDuration = 2, aboutRef }) {
 
       {/* Cubic Text (Second Line) */}
       <mesh ref={cubeRef} position={[0, 1, 0]} scale={[0.6, 0.6, 0.6]}>
-        <boxGeometry args={[1, 1, 1]} /> {/* Cube size */}
+        <boxGeometry args={[3, 1, 1]} /> {/* Cube size */}
         <meshStandardMaterial transparent opacity={0} /> {/* Make the cube transparent */}
 
         {/* Face 1 (Front) */}
