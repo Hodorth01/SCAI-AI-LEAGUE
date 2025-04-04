@@ -44,7 +44,7 @@ const Home = () => {
         <section className="Steps-section" >
           <Steps/>
         </section>
-        <section className="contact-section" >
+        <section className="contact-section" id="contact">
           <Contact/>
         </section>
         <Footer/>

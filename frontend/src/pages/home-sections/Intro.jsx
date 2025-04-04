@@ -3,8 +3,11 @@ import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import TennisBall from "../../components/TennisBall";
 import CubicText from "../../components/CubicText";
+import IntroText from "../../components/IntroText";
 
 const Intro = ({ aboutRef }) => {
+  const isMobile = window.innerWidth < 768; // Or your preferred breakpoint
+
   return (
     <div className="hero-section">
       {/* 3D Canvas */}
@@ -17,12 +20,16 @@ const Intro = ({ aboutRef }) => {
         <TennisBall position={[1.5, -1, 1]} /> {/* Right side, further back */}
         <TennisBall position={[1.5, 1.5, -2]} /> {/* Center, closer to the camera */}
 
-        {/* Cubic Text */}
-        <CubicText
-          texts={["playing", "mastering", "analyzing", "mastering"]}
-          faceDuration={2}
-          aboutRef={aboutRef} // Pass aboutRef to CubicText
-        />
+        {isMobile ? (
+      <IntroText aboutRef={aboutRef} />
+      ) : (
+      <CubicText
+        texts={["playing", "mastering", "analyzing", "mastering"]}
+        faceDuration={2}
+        aboutRef={aboutRef} // Pass aboutRef to CubicText
+        />    
+      )}
+        
 
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       </Canvas>

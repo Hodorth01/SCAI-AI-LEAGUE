@@ -1,31 +1,62 @@
 import { Link } from 'react-router-dom'
-import Logo from '../components/Logo'
+import { useLogout } from '../hooks/useLogout.jsx'
+import { useAuthContext } from '../hooks/useAuthContext.jsx'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Logo from "../components/Logo";
 
-const Header = () => {
+function Header() {
+  const { logout } = useLogout()
+  const { user } = useAuthContext()
 
-    return (
-    <header>
-        <nav className="navbar navbar-expand-lg">
-            <div className="container-fluid p-2">
-                <a className="navbar-brand" href="/"><Logo/></a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                <div className="navbar-nav" >
-                    <a className="nav-link px-3" aria-current="page" href="/#about">About Us</a>
-                    <a className="nav-link px-3" aria-current="page" href="/#services">Services</a>
-                    <a className="nav-link px-3" href="#">Your History</a>
-                    <a className="nav-link px-3" href="/login">login</a>
-                    <a className="nav-link px-3" href="#">Contact Us</a>
-                </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    )
+  const handleClick = () => {
+    logout()
+  }
+
+
+  return (
+    <Navbar 
+      expand="lg" 
+      className="bg-body-transparent nav"
+    >
+      <Container fluid className='px-0 fs-5 '>
+        <Navbar.Brand href="#home"><Logo /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className='m-2'/>
+        <Navbar.Collapse id="basic-navbar-nav" className='justify-content-center '>
+          <Nav> {/* Changed from me-auto to ms-auto for right alignment */}
+            <Nav.Link href="/#about" className='m-2'>About</Nav.Link>
+            <Nav.Link href="/#services" className='m-2'>Services</Nav.Link>
+            <Nav.Link href="/#contact" className='m-2'>Contact</Nav.Link>
+            
+
+            {user ? (
+              <>
+              <NavDropdown 
+              title="Dashboard" 
+              id="basic-nav-dropdown"
+              className="nav-dropdown m-2"
+            >
+                <NavDropdown.Item href="#history" className="text-white  ">History</NavDropdown.Item>
+                <NavDropdown.Item href="#leaderboard" className="text-white ">Leaderboard</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link  className="m-2 " disabled >{user.userName}</Nav.Link>
+              <Nav.Link href="" className='m-2' onClick={handleClick}>Logout</Nav.Link>
+              </>
+
+
+          ) : (
+            <>
+            <Nav.Link href="/login"  className='m-2'>Login</Nav.Link>
+            <Nav.Link href="/signup" className='m-2' >Signup</Nav.Link>
+            </>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default Header
-
-
+export default Header;

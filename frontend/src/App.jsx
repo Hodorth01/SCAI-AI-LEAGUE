@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import {useAuthContext} from "./hooks/useAuthContext.jsx"
 import Loader from './components/Loader';
 import Header from "./layout/Header"
 // Lazy-loaded components
@@ -8,7 +9,8 @@ const Login = lazy(() => import('./auth/Login'));
 const Signup = lazy(() => import('./auth/Signup'));
 
 function App() {
-  
+  const {user} = useAuthContext()
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -17,8 +19,13 @@ function App() {
           <Suspense fallback={<Loader/>}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="signup" element={<Signup />} />
-              <Route path="login" element={<Login />} />
+              <Route
+                path="/signup"
+                element={!user ? <Signup /> :<Navigate to="/" />}
+              />
+              <Route path="login"                             
+                element={!user ?<Login /> : <Navigate to="/" />}
+              />
             </Routes>
           </Suspense>
         </div>
