@@ -11,8 +11,8 @@ const Steps = () => {
   return (
     <div className="py-5" ref={sectionRef}>
       {/* Heading */}
-      <div className="d-flex justify-content-center mb-5" ref={addToHeadingRefs}>
-        <h1 className="text-white text-heading-lg">
+      <div className="d-flex justify-content-center mb-5 mx-2" ref={addToHeadingRefs}>
+        <h1 className="text-white text-heading-lg mx-1">
           <span className="colordText">Master </span>
           In Three Steps!
         </h1>
