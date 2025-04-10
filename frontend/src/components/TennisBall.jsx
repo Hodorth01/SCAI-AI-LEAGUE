@@ -10,7 +10,7 @@ const TennisBall = ({ position }) => {
   useEffect(() => {
     const loader = new THREE.TextureLoader();
     loader.load(
-      "./textures/texture.png", 
+      "./textures/AdobeStock_145356555.jpeg", 
       (texture) => {
         materialRef.current.map = texture;
         materialRef.current.opacity = 1; // Set higher initial opacity here

@@ -24,7 +24,6 @@ export const useScrollAnimation = () => {
 
     // Force layout calculation
     const rect = sectionRef.current.getBoundingClientRect();
-    console.log('Section position:', rect);
 
     const tl = gsap.timeline({
       scrollTrigger: {

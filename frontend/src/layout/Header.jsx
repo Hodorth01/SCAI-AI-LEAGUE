@@ -38,7 +38,7 @@ function Header() {
               id="basic-nav-dropdown"
               className="nav-dropdown m-2"
             >
-                <NavDropdown.Item href="#history" className="text-white  ">History</NavDropdown.Item>
+                <NavDropdown.Item href="/dashboard" className="text-white  ">dahsboard</NavDropdown.Item>
                 <NavDropdown.Item href="#leaderboard" className="text-white ">Leaderboard</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link  className="m-2 " disabled >{user.userName}</Nav.Link>

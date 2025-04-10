@@ -36,7 +36,7 @@ const Intro = ({ aboutRef }) => {
 
       {/* Hero Content */}
       <div className="hero-content mt-5 pt-5 w-100">
-        <div className="mt-5 mb-5 mx-3 d-flex justify-content-center">
+        <div className="mt-5 mb-3 mx-3 d-flex justify-content-center">
           <div className="line"></div>
         </div>        
         <p className="lead mt-3 pt-4">

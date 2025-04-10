@@ -5,6 +5,7 @@ const helmet = require("helmet")
 const mongoSanitize = require('express-mongo-sanitize');
 
 const userRouter = require('./routes/user')
+const statusRouter = require('./routes/status')
 const app = express();
 
 //  Security Middleware
@@ -26,6 +27,8 @@ mongoose.connect(process.env.MONGO_URI)
 })
 
 app.use("/api/user",userRouter)
+app.use("/api/status",statusRouter)
+
 
 
 process.env
