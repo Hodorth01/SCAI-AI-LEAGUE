@@ -24,7 +24,7 @@ const Dashboard = () => {
 
     const fetchStatus = async () => {
       try {
-        const response = await fetch('/api/status/', {
+        const response = await fetch('https://scai-ai-league-production.up.railway.app/api/status/', {
           headers: { "Authorization": `Bearer ${user.token}` }
         });
 
