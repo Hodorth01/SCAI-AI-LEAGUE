@@ -4,7 +4,7 @@ Access the dashboard here:
 
 **Login Credentials:**  
 - **Username:** `thamer`  
-- **Password:** `123`
+- **Password:** `123qwe`
 
 #  TennisProject
 
