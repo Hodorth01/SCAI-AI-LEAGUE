@@ -1,10 +1,10 @@
 # TennisProject
 Tennis analysis using deep learning and machine learning. <br>
 
-![](pics/hard.gif)
-![](pics/grass.gif)
-![](pics/clay.gif)
-![](pics/heatmap_img.png)
+![](model/pics/hard.gif)
+![](model/pics/grass.gif)
+![](model/pics/clay.gif)
+![](model/pics/heatmap_img.png)
 
 ### Player Detection
 We utilized FasterRCNN for player detection and tracking throughout tennis matches.
@@ -20,7 +20,7 @@ We developed a custom neural network model for detecting the tennis court, speci
 ### How to run
 Prepare a video file with resolution 1280x720
 1. clone the repository https://github.com/Hodorth01/SCAI-AI-LEAGUE
-2. cd to TennisProject
+2. cd to model\TennisProject
 3. run 'pip install -r requirements.txt'
 4. run 'main.py [args]'
 
