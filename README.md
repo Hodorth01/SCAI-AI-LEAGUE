@@ -1,10 +1,10 @@
 # TennisProject
 Tennis analysis using deep learning and machine learning. <br>
 
-![](pics/hard.gif)
-![](pics/grass.gif)
-![](pics/clay.gif)
-![](pics/heatmap_img.png)
+![](model/pics/hard.gif)
+![](model/pics/grass.gif)
+![](model/pics/clay.gif)
+![](model/pics/heatmap_img.png)
 
 ### Player Detection
 We utilized FasterRCNN for player detection and tracking throughout tennis matches.
