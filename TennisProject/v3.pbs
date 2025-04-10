@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=32
+#PBS -q A100
+#PBS -N 12min_test
+
+cd $PBS_O_WORKDIR
+module load /app/utils/modules/anaconda3-2024.02
+
+source activate aiads
+
+time python /ddn/data/fcit/aomarbinmadi/seed/TennisProject/main.py  --path_ball_track_model "models/ball_tracking_model.pt"  --path_court_model "models/model_tennis_court_det.pt"  --path_bounce_model "models/bounce_detector_model.cbm"  --path_input_video "input_video.mp4"  --path_output_video "output_video.mp4"
+
