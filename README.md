@@ -1,7 +1,10 @@
 # Dashboard
-to access the dashboard use 
-username: XXXX
-password: XXXXXXXX <br>
+Access the dashboard here:  
+🔗 [scai-ai-league-production-2128.up.railway.app](https://scai-ai-league-production-2128.up.railway.app/)
+
+**Login Credentials:**  
+- **Username:** `XXXX`  
+- **Password:** `XXXXXXXX`
 # TennisProject
 Tennis analysis using deep learning and machine learning. <br>
 
