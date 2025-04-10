@@ -9,7 +9,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite preview --host"
-
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -21,6 +20,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "chart.js": "^4.4.8",
+    "dotenv": "^16.4.7",
     "gsap": "^3.12.7",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
