@@ -4,6 +4,7 @@ Tennis analysis using deep learning and machine learning. <br>
 ![](pics/hard.gif)
 ![](pics/grass.gif)
 ![](pics/clay.gif)
+![](pics/heatmap_img.png)
 
 ### Ball Detection
 For detecting the tennis ball during gameplay, we implemented TrackNet, which provides accurate ball tracking even in challenging conditions. The model has been thoroughly tested on match footage and delivers reliable results.
