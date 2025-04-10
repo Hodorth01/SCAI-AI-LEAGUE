@@ -18,11 +18,13 @@ Prepare a video file with resolution 1280x720
 1. cd to TennisProject
 2. run 'pip install -r requirements.txt
 3. run main.py <args>
+
 This will generate:
 * CSV file with detailed analysis data
 * Processed video featuring a minimap of the game
 
 4. run visualizer.py <args>
+
 The visualizer provides:
 * Heat map of ball movement
 * Ball bounce coordinates
