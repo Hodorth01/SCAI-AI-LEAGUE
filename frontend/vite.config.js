@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:4000', // Use the env variable or fallback to localhost
+        target: 'https://scai-ai-league-production-2128.up.railway.app', // API backend URL
         changeOrigin: true,
       },
     },
