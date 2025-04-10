@@ -15,15 +15,16 @@ To accurately identify when the ball bounces during gameplay, we implemented a C
 We developed a custom neural network model for detecting the tennis court, specifically trained to identify 14 key points that define the court boundaries and lines. Our model was trained on a comprehensive dataset of 19,000 frames, ensuring robust performance across various lighting conditions and camera angles.
 ### How to run
 Prepare a video file with resolution 1280x720
-1. cd to TennisProject
-2. run 'pip install -r requirements.txt
-3. run main.py <args>
+1. clone the repository https://github.com/Hodorth01/SCAI-AI-LEAGUE
+2. cd to TennisProject
+3. run 'pip install -r requirements.txt
+4. run main.py <args>
 
 This will generate:
 * CSV file with detailed analysis data
 * Processed video featuring a minimap of the game
 
-4. run visualizer.py <args>
+5. run visualizer.py <args>
 
 The visualizer provides:
 * Heat map of ball movement
