@@ -3,15 +3,18 @@ const express = require('express');
 const mongoose = require("mongoose");
 const helmet = require("helmet");
 const mongoSanitize = require('express-mongo-sanitize');
+const cors = require('cors');  // Import cors
 
 const userRouter = require('./routes/user');
 const statusRouter = require('./routes/status');
 const app = express();
 
-// Root route for health check
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
+// Enable CORS for all routes
+app.use(cors({
+  origin: 'https://scai-ai-league-production.up.railway.app',  //  frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}));
 
 // Security Middleware
 app.use(helmet());
