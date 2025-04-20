@@ -7,7 +7,7 @@ export const useLogin = () => {
 
     const login = async (userName , password)=>{
 
-        const response = await fetch('https://scai-ai-league-production.up.railway.app/api/user/login', {
+        const response = await fetch("http://scai-ai-league-production.up.railway.app/api/user/login", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ userName, password })

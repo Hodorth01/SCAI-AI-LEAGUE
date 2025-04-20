@@ -22435,7 +22435,6 @@ fieldset:disabled .btn {
   }
 
   .navbar-toggler+.navbar-collapse .dropdown.nav-item .dropdown-menu {
-    background-color: transparent;
     overflow: scroll;
     position: relative;
   }
@@ -28158,7 +28157,7 @@ pre[class*=language-] {
   }
 }
 
-.navbar-collapse{
+.dashboard-collapse{
 background : transparent !important;
 cursor: pointer;
 }

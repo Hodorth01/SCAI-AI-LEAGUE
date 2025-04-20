@@ -33,23 +33,14 @@ function Header() {
 
             {user ? (
               <>
-              <NavDropdown 
-              title="Dashboard" 
-              id="basic-nav-dropdown"
-              className="nav-dropdown m-2"
-            >
-                <NavDropdown.Item href="/dashboard" className="text-white  ">dahsboard</NavDropdown.Item>
-                <NavDropdown.Item href="#leaderboard" className="text-white ">Leaderboard</NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link  className="m-2 " disabled >{user.userName}</Nav.Link>
-              <Nav.Link href="" className='m-2' onClick={handleClick}>Logout</Nav.Link>
+                <Nav.Link href="/dashboard" className='m-2'>Dashboard</Nav.Link>
+                <Nav.Link  className="m-2 " disabled >{user.userName}</Nav.Link>
+                <Nav.Link href="" className='m-2' onClick={handleClick}>Logout</Nav.Link>
               </>
-
-
           ) : (
             <>
-            <Nav.Link href="/login"  className='m-2'>Login</Nav.Link>
-            <Nav.Link href="/signup" className='m-2' >Signup</Nav.Link>
+              <Nav.Link href="/login"  className='m-2'>Login</Nav.Link>
+              <Nav.Link href="/signup" className='m-2' >Signup</Nav.Link>
             </>
             )}
           </Nav>

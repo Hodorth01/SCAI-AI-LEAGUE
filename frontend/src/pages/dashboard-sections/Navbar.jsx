@@ -10,7 +10,7 @@ const Navbar = ({ toggleSidebar ,user}) => {
                             </ol>
                             <h6 className="font-weight-bolder text-white mb-0">Dashboard</h6>
                     </nav>
-                    <div className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+                    <div className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end dashboard-collapse" id="navbar">
                         <ul className="navbar-nav justify-content-end">
                             <li className="nav-item d-flex align-items-center">
                                 <span  className="nav-link text-white font-weight-bold px-0">

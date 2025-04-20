@@ -10,7 +10,7 @@ const Contact = () => {
 
 
   return (
-    <div className="container my-5" ref={sectionRef}>
+    <div className="container my-5 text-white" ref={sectionRef}>
       <div className="row justify-content-end">
         {/* Left Content - Contact Info */}
         <div className="col-lg-6 my-5">
@@ -53,7 +53,7 @@ const Contact = () => {
           <form className='p-5 py-3 contact-form'>
             <div className="row text-white">
               <div className="col-md-12">
-                <label htmlFor="name" className="form-label">YOUR NAME</label>
+                <label htmlFor="name" className="form-label text-white">YOUR NAME</label>
                 <input 
                   type="text" 
                   className="form-control my-2 rounded-0 bg-transparent text-white" 
@@ -63,7 +63,7 @@ const Contact = () => {
                 />
               </div>
               <div className="col-md-12">
-                <label htmlFor="email" className="form-label">YOUR EMAIL</label>
+                <label htmlFor="email" className="form-label text-white">YOUR EMAIL</label>
                 <input 
                   type="text" 
                   className="form-control my-2 rounded-0 bg-transparent text-white" 
@@ -73,7 +73,7 @@ const Contact = () => {
                 />
               </div>
               <div className="col-12">
-                <label htmlFor="message" className="form-label">YOUR MESSAGE</label>
+                <label htmlFor="message" className="form-label text-white">YOUR MESSAGE</label>
                 <textarea 
                   className="form-control my-2 rounded-0 bg-transparent text-white" 
                   id="message" 
@@ -88,7 +88,7 @@ const Contact = () => {
                     <Border>
                       <button 
                         type="submit" 
-                        className="btn btn-transparent p-1 text-white fs-6"
+                        className="btn btn-transparent p-1 text-white fs-6 m-0"
                       >
                         SEND MESSAGE
                       </button>

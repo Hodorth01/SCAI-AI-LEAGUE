@@ -24,7 +24,7 @@ const Dashboard = () => {
 
     const fetchStatus = async () => {
       try {
-        const response = await fetch('https://scai-ai-league-production.up.railway.app/api/status/', {
+        const response = await fetch('http://scai-ai-league-production.up.railway.app/api/status/', {
           headers: { "Authorization": `Bearer ${user.token}` }
         });
 
@@ -100,14 +100,14 @@ const Dashboard = () => {
             </div>
           </div>
           <Chart performanceData={statusData?.Performance || []} />
-          <div className="row mt-4">
-            <Heatmap 
-               result = {statusData?.heatmap?.toString() || "./charts/heatmap_default.png"} 
-            />
-            <ShotPlacement
-                result = {statusData?.shot_placements?.toString() || "./charts/shot_placement_default.png"} 
-            />
-          </div>
+            <div className="row mt-4 g-3 justify-content-start"> {/* g-3 = nice medium gap */}
+              <div className="col-lg-5 mb-lg-0 mb-4 bg-light me-2 rounded p-3">
+                <Heatmap result={statusData?.heatmap?.toString() || "./charts/heatmap_default.png"} />
+              </div>
+              <div className="col-lg-5 mb-lg-0 mb-4 bg-light me-2 rounded p-3">
+                <ShotPlacement result={statusData?.shot_placements?.toString() || "./charts/shot_placement_default.png"} />
+              </div>
+            </div>
         </div>
       </main>
     </div>

@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="row justify-content-center mb-4" ref={addToTextRefs}>
           <div className="col-auto">
             <div className="footer-nav">
-              {['About', 'Services', 'Support', 'Leaderboard', 'History'].map((item) => (
+              {['About', 'Services', 'Support', 'Dashboard'].map((item) => (
                 <a 
                   key={item} 
                   href="#" 
@@ -39,16 +39,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Description text */}
-        <div className="row justify-content-center mb-4" ref={addToTextRefs}>
-          <div className="col-md-8 text-center">
-            <p className="footer-description">
-              Lorem ipsum Neque porro quisquam est qui do lorem ipsum quia dolor sit amet, Neque porro elit NeDque
-            </p>
-          </div>
-        </div>
-
         {/* Social icons */}
         <div className="row justify-content-center mb-4" ref={addToTextRefs}>
           <div className="col-auto">

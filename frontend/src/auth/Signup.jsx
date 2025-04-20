@@ -14,16 +14,16 @@ const Signup = () => {
     return (
         <div className="p-2">
             <form className="signup text-white" onSubmit={handleSubmit}>
-                <h3 className="mb-4">Sign Up</h3>
+                <h3 className="mb-4 text-white">Sign Up</h3>
 
-                <label className="form-label d-block">Username:</label>
+                <label className="form-label d-block text-white">Username:</label>
                 <input
                     className="d-block"
                     type="text"
                     onChange={(e) => setUsername(e.target.value)}
                     value={username}
                 />
-                <label className="form-label d-block">Password:</label>
+                <label className="form-label d-block text-white">Password:</label>
                 <input
                     className="d-block"
                     type="password"
