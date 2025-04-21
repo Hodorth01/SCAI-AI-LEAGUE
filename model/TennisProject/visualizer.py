@@ -19,21 +19,24 @@ class Player:
         self.name = name
         self.shots = []
 
+
     def add_shot(self, shot_x, shot_y, shot_speed, shot_type, player_x, player_y):
         self.shots.append(Shot(shot_x, shot_y, shot_speed, shot_type, player_x, player_y))
 
 
 class TennisCourtVisualization:
-    def __init__(self, players=[], court_width=166, court_length=350, show_heatmap=True):
+    def __init__(self, players=[], court_width=166, court_length=350, show_heatmap=True, show_bounces=True):
         self.players = players
         self.court_width = court_width   # Court width in pixels
         self.court_length = court_length # Court length in pixels
         self.show_heatmap = show_heatmap
         self.fig = go.Figure()
+        self.show_bounces = show_bounces
         self.setup_court()
         if self.show_heatmap:
             self.add_heatmap()
-        self.add_all_shots()
+        if self.show_bounces:
+            self.add_all_shots()
         self.update_layout()
 
     def save_as_html(self, output_file="tennis_visualization.html"):
@@ -43,22 +46,26 @@ class TennisCourtVisualization:
         self.fig.update_layout(
             title="Tennis Court with Shots Visualization and Heatmap",
             xaxis=dict(
-                range=[0, self.court_length],
-                showgrid=False, 
-                zeroline=False,
-                fixedrange=True  # Prevent zooming on x-axis
+            range=[0, self.court_length],
+            showgrid=False, 
+            zeroline=False,
+            fixedrange=True,  # Prevent zooming on x-axis
+            showticklabels=False,  # Hide x-axis tick labels
             ),
             yaxis=dict(
-                range=[0, self.court_width],
-                showgrid=False, 
-                zeroline=False,
-                scaleanchor="x",  # Make sure the scaling is equal
-                scaleratio=1,     # Equal scaling
-                fixedrange=True   # Prevent zooming on y-axis
+            range=[0, self.court_width],
+            showgrid=False, 
+            zeroline=False,
+            scaleanchor="x",  # Make sure the scaling is equal
+            scaleratio=1,     # Equal scaling
+            fixedrange=True,   # Prevent zooming on y-axis
+            showticklabels=False,  # Hide y-axis tick labels
             ),
             width=800,           # Set width of the figure
             height=400,          # Set height of the figure
-            margin=dict(l=50, r=50, t=50, b=50)
+            margin=dict(l=50, r=50, t=50, b=50),
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'  # Changed to skyblue
         )
 
     def setup_court(self):
@@ -186,14 +193,26 @@ class TennisCourtVisualization:
         # Collect all valid shot locations
         all_x = []
         all_y = []
+        ## ball bounce heatmap        
+        # for player in self.players:
+        #     for shot in player.shots:
+        #         if shot.shot_x < self.court_width and shot.shot_x > 0 and shot.shot_y < self.court_length and shot.shot_y > 0:
+        #             # Note the swapped coordinates to match the data
+        #             all_x.append(shot.shot_y + 31)  # Adjust as per shot display
+        #             all_y.append(shot.shot_x + 22)  # Adjust as per shot display
+
+        # first player position heatmap
+        player = self.players[1]
+        for shot in player.shots:
+            # Check for NaN or infinite values before adding to the heatmap data
+            if (not pd.isna(shot.player_x) and not pd.isna(shot.player_y) and 
+            np.isfinite(shot.player_x) and np.isfinite(shot.player_y)):
+                all_x.append(shot.player_y + 31)  # Adjust as per player display
+                all_y.append(shot.player_x + 22)  # Adjust as per player display
+
         
-        for player in self.players:
-            for shot in player.shots:
-                if shot.shot_x < self.court_width and shot.shot_x > 0 and shot.shot_y < self.court_length and shot.shot_y > 0:
-                    # Note the swapped coordinates to match the data
-                    all_x.append(shot.shot_y + 31)  # Adjust as per shot display
-                    all_y.append(shot.shot_x + 22)  # Adjust as per shot display
-        
+
+
         if len(all_x) < 2:  # Need at least 2 points for kernel density estimation
             return
             
@@ -216,18 +235,17 @@ class TennisCourtVisualization:
                 z=Z,
                 x=x_grid,
                 y=y_grid,
-                colorscale=[[0, 'rgb(3, 177, 252)'], [0.5, 'rgb(252, 252, 3)'], [1, 'rgb(252, 44, 3)']],  # Red-yellow color scale (hot areas = more shots)
+                colorscale=[[0, 'rgb(252, 255, 255)'], [0.5, 'rgb(252, 3, 240)'], [1, 'rgb(128, 0, 128)']],  # Light blue to medium lavender to dark purple
                 opacity=0.5,
                 showscale=True,
                 colorbar=dict(
-                    title="Shot Density",
+                    title="Player Position Density",
                     thickness=15,
                     len=0.5,
                     y=0.8
                 ),
                 contours=dict(
                     showlines=False,
-
                 ),
                 hoverinfo="none",
                 name='Shot Density'
@@ -239,8 +257,8 @@ class TennisCourtVisualization:
         for player in self.players:
             for shot in player.shots:
                 if shot.shot_x < self.court_width and shot.shot_x > 0 and shot.shot_y < self.court_length and shot.shot_y > 0:
-                    # self.add_shot(shot, player.name)
-                    pass
+                    self.add_shot(shot, player.name)
+                    # pass
 
     def add_shot(self, shot, player_name):
         # Create hover text with all shot information
@@ -278,7 +296,7 @@ class TennisCourtVisualization:
         self.fig.show()
 
 # Usage example
-def visualize_tennis_data(csv_file, show_heatmap=True):
+def visualize_tennis_data(csv_file, show_heatmap=True, show_bounces=True):
     # Read the CSV file
     tennis_data = pd.read_csv(csv_file)
     
@@ -295,18 +313,18 @@ def visualize_tennis_data(csv_file, show_heatmap=True):
             row['top_player_x'], row['top_player_y']
         )
         # Uncomment to add player 2's shots
-        # player2.add_shot(
-        #    row['bounce_x'], row['bounce_y'], 
-        #    row['ball_speed'], SHOT_TYPE, 
-        #    row['bottom_player_x'], row['bottom_player_y']
-        # )
+        player2.add_shot(
+           row['bounce_x'], row['bounce_y'], 
+           row['ball_speed'], SHOT_TYPE, 
+           row['bottom_player_x'], row['bottom_player_y']
+        )
     
     # Create and show visualization
-    viz = TennisCourtVisualization([player1], show_heatmap=show_heatmap)  # or [player1, player2] for both players
+    viz = TennisCourtVisualization([player1, player2], show_heatmap=show_heatmap, show_bounces=show_bounces)  # or [player1, player2] for both players
     viz.show()
     
     # Save the visualization as an HTML file
-    # viz.save_as_html("tennis_court_visualization.html")
+    viz.save_as_html("tennis_court_visualization.html")
 
     return viz
 
@@ -315,5 +333,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--path_to_csv', type=str, help='path to output csv', default='output.csv')
     parser.add_argument('--no_heatmap', action='store_true', help='disable heatmap visualization')
+    parser.add_argument('--no_bounces', action='store_true', help='disable bounces visualization')
     args = parser.parse_args()
-    visualize_tennis_data(args.path_to_csv, show_heatmap=not args.no_heatmap)
+    visualize_tennis_data(args.path_to_csv, show_heatmap=not args.no_heatmap, show_bounces=not args.no_bounces)

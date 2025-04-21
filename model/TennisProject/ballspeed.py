@@ -73,6 +73,8 @@ def calculate_ball_speed(ball_coordinates, fps, frame_diff=1):
 
             # Calculate speed in m/s
             ball_speed = distance_m / dt
-            ball_speeds[i] = round(ball_speed, 2)  # Round to 2 decimal places for ball_speed
+            ball_speed_kph = ball_speed * 3.6  # Convert to km/h
+
+            ball_speeds[i] = round(ball_speed_kph, 2)  # Round to 2 decimal places for ball_speed
 
     return ball_speeds
