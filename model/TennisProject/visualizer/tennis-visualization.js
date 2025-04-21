@@ -376,11 +376,11 @@ addHeatmap() {
       
       // Add shots from the data
       for (const row of tennis_data) {
-        player1.addShot(
-          row.bounce_x, row.bounce_y,
-          row.ball_speed, SHOT_TYPE,
-          row.top_player_x, row.top_player_y
-        );
+        // player1.addShot(
+        //   row.bounce_x, row.bounce_y,
+        //   row.ball_speed, SHOT_TYPE,
+        //   row.top_player_x, row.top_player_y
+        // );
         
         player2.addShot(
           row.bounce_x, row.bounce_y,

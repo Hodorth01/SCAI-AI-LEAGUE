@@ -11,7 +11,7 @@
       dynamicTyping: true,
       complete: function(results) {
         // Call visualization with Papa Parse results
-        visualizeTennisData('output.csv',show_heatmap = true, show_bounces = false)
+        visualizeTennisData('output.csv')
           .then(figure => {
             Plotly.newPlot('visualization', figure.data, figure.layout);
           });
