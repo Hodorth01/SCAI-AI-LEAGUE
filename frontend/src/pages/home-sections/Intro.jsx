@@ -31,7 +31,7 @@ const Intro = ({ aboutRef }) => {
       )}
         
 
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+        <Stars radius={100} depth={50} count={5000} factor={6} saturation={0} fade speed={1} />
       </Canvas>
 
       {/* Hero Content */}

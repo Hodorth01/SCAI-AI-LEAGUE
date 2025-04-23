@@ -8,6 +8,8 @@ import Dashboard from './pages/Dashboard.jsx';
 const Home = lazy(() => import('./pages/Home'));
 const Login = lazy(() => import('./auth/Login'));
 const Signup = lazy(() => import('./auth/Signup'));
+const WaitingList = lazy(() => import('./auth/WaitingList'));
+
 
 function App() {
   const {user} = useAuthContext()
@@ -22,7 +24,7 @@ function App() {
               <Route path="/" element={<><Header /><Home /></>} />
               <Route
                 path="/signup"
-                element={!user ? <Signup /> :<Navigate to="/" />}
+                element={!user ? <WaitingList /> :<Navigate to="/" />}
               />
               <Route path="login"                             
                 element={!user ?<Login /> : <Navigate to="/" />}

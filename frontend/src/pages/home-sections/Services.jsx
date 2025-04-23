@@ -21,6 +21,13 @@ const Services = () => {
             <p className="text-white text-body-lg mb-4" ref={addToTextRefs}>
               From grassroots to grand slams, SEED isn't just tracking tennis—we're rewriting how it's played, watched, and judged. Ready to play smarter?
             </p>
+            <p class="d-none d-lg-block">
+            Every serve, volley, and stroke is meticulously tracked to elevate player performance and deliver actionable insights that drive continuous improvement 
+            and a competitive edge. By leveraging advanced analytics and real-time data, coaches and athletes can identify strengths, uncover hidden weaknesses, 
+            and tailor training programs to maximize potential. This holistic approach to performance analysis ensures smarter strategies, faster development, 
+            and measurable progress over time.
+
+            </p>
           </div>
         </div>
 
@@ -32,7 +39,7 @@ const Services = () => {
               <div className="mx-2 mb-4" ref={addToCardRefs}>
                 <ServiceCard
                   icon="./icons/heatmaps.png"
-                  title="heatmaps" 
+                  title="Heatmaps" 
                   description="Visualize a player's positioning and activity on the field."
                 />
               </div>
@@ -49,14 +56,14 @@ const Services = () => {
               <div className="mx-2 mb-4" ref={addToCardRefs}>
                 <ServiceCard
                   icon="./icons/ux.png"
-                  title="insights" 
+                  title="Insights" 
                   description="Evaluates past performances to identify trends and patterns."
                 />                                
               </div>
               <div className="mx-2 mb-4" ref={addToCardRefs}>
                 <ServiceCard
                   icon="./icons/shot.png"
-                  title="shot placements" 
+                  title="Shots" 
                   description="Visualize a player's shot accuracy on the field and learn new patterns."
                 />                                
               </div>
