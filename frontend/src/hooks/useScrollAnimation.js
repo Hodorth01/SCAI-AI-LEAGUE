@@ -49,7 +49,7 @@ export const useScrollAnimation = () => {
         tl.to(item.el, {
           opacity: 1,
           y: 0,
-          duration: 0.4,
+          duration: 0.6,
           ease: 'back.out(1.2)'
         }, '+=0.1');
       } else {
