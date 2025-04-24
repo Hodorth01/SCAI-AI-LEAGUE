@@ -10,7 +10,7 @@ import ShotPlacement from './dashboard-sections/ShotPlacement';
 
 const Dashboard = () => {
   const { user } = useAuthContext();
-  const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
+  const [isSidebarMinimized, setIsSidebarMinimized] = useState(true);
   const [statusData, setStatusData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
