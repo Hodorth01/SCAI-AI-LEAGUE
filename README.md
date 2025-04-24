@@ -13,8 +13,10 @@ Tennis analysis using deep learning and machine learning.
 ##  Website 
 
 ![](model/pics/website.gif)  
-![](model/pics/dashboard_preformance.png)  
-![](model/pics/dashboard_heatmap.png)  
+<p align="center">
+  <img src="model/pics/dashboard_preformance.png" alt="Performance Dashboard" width="45%" />
+  <img src="model/pics/dashboard_heatmap.png" alt="Heatmap Dashboard" width="45%" />
+</p>
 
 ---
 
