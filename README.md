@@ -25,7 +25,6 @@ Tennis analysis using deep learning and machine learning.
 ![](model/pics/hard.gif)  
 ![](model/pics/grass.gif)  
 ![](model/pics/clay.gif)  
-![](model/pics/heatmap_img.png)
 
 ---
 
