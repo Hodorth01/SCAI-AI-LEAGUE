@@ -10,6 +10,12 @@ Access the dashboard here:
 
 Tennis analysis using deep learning and machine learning.  
 
+##  Website 
+
+![](Untitled_video_-_Made_with_Clipchamp.mp4)  
+![](model/pics/grass.gif)  
+![](model/pics/clay.gif)  
+![](model/pics/heatmap_img.png)
 ---
 
 ##  Visual Outputs
