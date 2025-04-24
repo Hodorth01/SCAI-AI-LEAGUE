@@ -12,7 +12,7 @@ Tennis analysis using deep learning and machine learning.
 
 ##  Website 
 
-![](model/pics/website.mp4)  
+![](model/pics/website.gif)  
 ![](model/pics/dashboard_preformance.png)  
 ![](model/pics/dashboard_heatmap.png)  
 
