@@ -86,7 +86,7 @@ const Login = () => {
                   </svg>
                 </div>
                 <h1>
-                Welcome back to <span className="colordText"> SEED  </span>
+                Welcome back to <span className="colordText">SEED</span>
                 </h1>
                 <p>
                 Whether you're refining your serve or mastering your footwork, your performance data is here, ready to help you level up
@@ -154,28 +154,4 @@ const Login = () => {
       </div>
     )
 }
-
- // <div className="p-2">
-        // <form className="login text-white " onSubmit={handleSubmit}>
-        //     <h3 className="mb-4 text-white">Log In</h3>
-        //     <label className="form-label d-block text-white">Username:</label>
-        //     <input
-        //         className="d-block "
-        //         type="text"
-        //         onChange={(e) => setUserName(e.target.value)}
-        //         value={userName}
-        //     />
-        //     <label className="form-label d-block text-white">Password:</label>
-        //     <input
-        //         className="d-block"
-        //         type="password"
-        //         onChange={(e) => setPassword(e.target.value)}
-        //         value={password}
-        //     />
-
-        //     <button disabled={isLoading} className="button mt-3 me-1 text-white">Log in</button>
-        //     <a href="/signup" className="url "> you don't have an account?</a>
-        //     {error && <div className="error">{error}</div>}
-        // </form>
-        // </div>
 export default Login
