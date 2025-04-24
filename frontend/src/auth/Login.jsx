@@ -86,11 +86,10 @@ const Login = () => {
                   </svg>
                 </div>
                 <h1>
-                  Enter the <span>SEED</span> Protocol
+                Welcome back to <span className="colordText"> SEED  </span>
                 </h1>
                 <p>
-                  Grant yourself priority access. Register below to secure your
-                  position and be notified the moment the system goes live.
+                Whether you're refining your serve or mastering your footwork, your performance data is here, ready to help you level up
                 </p>
                 <div className="accent-line"></div>
               </div>

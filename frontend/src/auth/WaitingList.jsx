@@ -134,7 +134,7 @@ const WaitingList = () => {
                 </svg>
               </div>
               <h1>
-                Enter the <span>SEED</span> Protocol
+                Enter the <span className="colordText">SEED</span> Protocol
               </h1>
               <p>
                 Grant yourself priority access. Register below to secure your

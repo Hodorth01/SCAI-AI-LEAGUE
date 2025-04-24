@@ -915,10 +915,7 @@ input.error {
   animation: fadeInFromBottom 0.8s ease-out 0.7s forwards;
 }
 
-.content-column h1 span {
-  color: var(--primary-purple);
-  text-shadow: 0 0 18px var(--accent-glow);
-}
+
 
 .content-column p {
   font-size: 1.1rem;
