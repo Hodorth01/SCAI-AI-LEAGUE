@@ -50,7 +50,7 @@ const Contact = () => {
         </div>
             {/* Right Content - Contact Form */}
         <div className="col-lg-6 my-5" ref={addToCardRefs}>
-          <form className='p-5 py-3 contact-form'>
+          <form className='p-3 py-3 contact-form'>
             <div className="row text-white">
               <div className="col-md-12">
                 <label htmlFor="name" className="form-label text-white">YOUR NAME</label>

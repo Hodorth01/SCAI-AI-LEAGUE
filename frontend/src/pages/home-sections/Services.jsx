@@ -21,7 +21,7 @@ const Services = () => {
             <p className="text-white text-body-lg mb-4" ref={addToTextRefs}>
               From grassroots to grand slams, SEED isn't just tracking tennis—we're rewriting how it's played, watched, and judged. Ready to play smarter?
             </p>
-            <p class="d-none d-lg-block">
+            <p className="d-none d-lg-block" ref={addToTextRefs}>
             Every serve, volley, and stroke is meticulously tracked to elevate player performance and deliver actionable insights that drive continuous improvement 
             and a competitive edge. By leveraging advanced analytics and real-time data, coaches and athletes can identify strengths, uncover hidden weaknesses, 
             and tailor training programs to maximize potential. This holistic approach to performance analysis ensures smarter strategies, faster development, 

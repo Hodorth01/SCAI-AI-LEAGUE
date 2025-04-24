@@ -24,10 +24,10 @@ function App() {
               <Route path="/" element={<><Header /><Home /></>} />
               <Route
                 path="/signup"
-                element={!user ? <WaitingList /> :<Navigate to="/" />}
+                element={!user ? <><Header /><WaitingList /></> :<Navigate to="/" />}
               />
               <Route path="login"                             
-                element={!user ?<Login /> : <Navigate to="/" />}
+                element={!user ?<><Header/><Login /> </> : <Navigate to="/" />}
               />
               <Route path="dashboard"                             
                 element={user ?<Dashboard /> : <Navigate to="/" />}

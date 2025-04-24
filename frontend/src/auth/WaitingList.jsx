@@ -114,84 +114,6 @@ const WaitingList = () => {
 
   return (
     <div className="waitlist-page">
-    {/* <Particles
-    id="tsparticles"
-    options={{
-        background: {
-        color: {
-            value: "#0d0d12",
-        },
-        },
-        particles: {
-        number: {
-            value: 60,
-            density: {
-            enable: true,
-            value_area: 800,
-            },
-        },
-        color: {
-            value: "#8A2BE2",
-        },
-        shape: {
-            type: "circle",
-        },
-        opacity: {
-            value: 0.4,
-            random: true,
-            anim: {
-            enable: true,
-            speed: 0.5,
-            opacity_min: 0.1,
-            sync: false,
-            },
-        },
-        size: {
-            value: 2.5,
-            random: true,
-        },
-        links: {
-            enable: true,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.1,
-            width: 1,
-        },
-        move: {
-            enable: true,
-            speed: 1.5,
-            direction: "none",
-            random: true,
-            straight: false,
-            outModes: "out",
-            bounce: false,
-        },
-        },
-        interactivity: {
-        events: {
-            onHover: {
-            enable: true,
-            mode: "grab",
-            },
-            onClick: {
-            enable: false,
-            },
-            resize: true,
-        },
-        modes: {
-            grab: {
-            distance: 140,
-            links: {
-                opacity: 0.3,
-            },
-            },
-        },
-        },
-        detectRetina: true,
-    }}
-    /> */}
-
-      
       <div className="waitlist-wrapper" ref={wrapperRef}>
         <div className="waitlist-container">
           <div className="layout-grid">
@@ -308,7 +230,7 @@ const WaitingList = () => {
                     )}
                   </div>
                 </div>
-                <button type="submit" ref={submitButtonRef}>
+                <button type="submit" id="submit-btn" ref={submitButtonRef}>
                   Request Entry
                 </button>
               </form>

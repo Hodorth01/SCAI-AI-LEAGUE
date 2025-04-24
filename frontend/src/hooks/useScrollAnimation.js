@@ -42,14 +42,14 @@ export const useScrollAnimation = () => {
         tl.to(item.el, {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.5,
           ease: 'power3.out'
         }, index === 0 ? 0 : '+=0.2');
       } else if (item.type === 'card') {
         tl.to(item.el, {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.4,
           ease: 'back.out(1.2)'
         }, '+=0.1');
       } else {
