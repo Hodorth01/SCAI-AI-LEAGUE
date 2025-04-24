@@ -12,10 +12,10 @@ Tennis analysis using deep learning and machine learning.
 
 ##  Website 
 
-![](Untitled_video_-_Made_with_Clipchamp.mp4)  
-![](model/pics/grass.gif)  
-![](model/pics/clay.gif)  
-![](model/pics/heatmap_img.png)
+![](model/pics/website.mp4)  
+![](model/pics/dashboard_preformance.png)  
+![](model/pics/dashboard_heatmap.png)  
+
 ---
 
 ##  Visual Outputs
